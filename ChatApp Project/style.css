@@ -1,0 +1,387 @@
+*,* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+@font-face {
+    font-family: 'ubuntu';
+    src: url(./fonts/Ubuntu/Ubuntu-Regular.ttf);
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #f7f7f7;
+    font-family: 'ubuntu';
+    overflow: hidden;
+}
+
+@media screen and (max-width: 425px) {
+    .wrapper {
+        background: #fff;
+        width: 90%;
+        border-radius: 16px;
+        margin: 5rem 0;
+        box-shadow: 0 0 128px 0 rgba(0, 0, 0,0.1), 0 32px 64px -48px rgba(0, 0, 0, 0.5);
+    }
+    
+    /* Sign Up */
+    .form {
+        padding: 25px 30px;
+    }
+    
+    .form header{
+        font-size: 25px;
+        font-weight: 600;
+        padding-bottom: 10px;
+        border-bottom: 1px solid #e6e6e6;
+    }
+    
+    .form form {
+        margin: 20px 0;
+    }
+    
+    .form form .error-text {
+        color: #721c24;
+        background-color: #f8d;
+        padding: 8px 10px;
+        text-align: center;
+        border-radius: 5px;
+        margin-bottom: 10px;
+        border: 1px solid #f5c6cb;
+        display: none;
+    }
+    
+    .form form .name-details{
+        display: flex;
+    }
+    
+    form .name-details .field:first-child {
+        margin-right: 10px;
+    }
+    
+    form .name-details .field:last-child {
+        margin-left: 10px;
+    }
+    
+    .form form .field {
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 10px;
+    }
+    
+    .form form .field label {
+        margin-bottom: 2px;
+    }
+    
+    
+    .form form .field .input{
+        outline: none;
+        border-radius: 5px;
+        border: 1px solid #ccc;
+        height: 40px;
+        padding: 0 10px;
+        font-size: 1rem;
+        width: 100%;
+    }
+
+    .form form .image input{
+        font-size: 17px;
+    }
+
+    .form form .button input {
+        margin-top: 13px;
+        height: 45px;
+        border: none;
+        background: #333;
+        font-weight: 500;
+        color: white;
+        cursor: pointer;
+    }
+
+    .form a {
+        text-decoration: none;
+    }
+
+    .form a:hover {
+        text-decoration: underline;
+    }
+
+    .pass {
+        position: relative;
+    }
+    .show-pass {
+        position: absolute;
+        width: 20px;
+        height: 20px;
+        transform: translate(18rem, 1.9rem);
+        border-radius: 50%;
+        background-color: #ccc;
+        cursor: pointer;
+    }
+
+    .hide-pass {
+        background-color: black;
+    }
+
+    /* User Section */
+
+    .user {
+        padding: 25px 30px;        
+    }
+
+    .user header {
+        display: flex;
+        align-items: center;
+        padding-bottom: 20px;
+        justify-content: space-between;
+        border-bottom: 1px solid #e6e6e6;
+    }
+
+    .wrapper img {
+        object-fit: cover;
+        border-radius: 50%;
+    }
+
+    .user header .content {
+        display: flex;
+    }
+    .user header .content img {
+        height: 50px;
+        width:  50px;
+    }
+
+    .user header .details {
+        margin-left: 15px;
+    }
+
+    .user header .details span {
+        font-size: 15px;
+        font-weight: 500;
+    }
+
+    .user header .logout {
+        color: #fff;
+        font-size: 17px;
+        padding: 7px 15px;
+        background-color: #333;
+        border-radius: 5px;
+        text-decoration: none;
+
+    } 
+
+    .user .search {
+        margin: 20px 0;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .user .search  .text {
+        font-size: 18px;
+    }
+
+    .user .search input {
+        position: absolute;
+        height: 42px;
+        width: calc(76.5% - 50px);
+        border: 1px solid  #ccc;
+        padding: 0 13px;
+        font-size: 16px;
+        outline: none;
+        opacity: 0;
+        pointer-events: none;
+        transition: all .3s ease;
+    }
+
+    .user .search input.active {
+        opacity: 1;
+        pointer-events: auto;
+    }
+
+    .user .search button {
+        width: 47px;
+        height: 42px;
+        border: none;
+        outline: none;
+        color: #333;
+        background: #fff;
+        cursor: pointer;
+        font-family: 'ubuntu';
+        font-size: .9rem;
+        border-radius: 0 5px 5px 0; 
+    }
+
+    .user .search button.active {
+        color: #fff;
+        background: #333;
+    }
+
+    .user-list {
+        max-height: 315px;
+        overflow-y: auto;
+    
+    }
+
+    .user-list::-webkit-scrollbar {
+        width: 0px;
+    }
+    .user-list a {
+        display: flex;
+        justify-content: space-between;
+        text-decoration: none;
+        border-bottom: 1px solid #ccc;
+        margin-bottom: 1rem;
+
+
+    }
+
+    .user-list .content {
+        display: flex;
+        align-items: center;
+    }
+
+    .user-list .content .details {
+        margin-left: 14px;
+        color: #333;
+        margin-bottom: 2rem;
+    }
+
+    .user-list :last-child {
+        border: none;
+    }
+
+    .user-list :last-child .content .details {
+        margin-bottom: 0px;
+    }
+
+    .user-list img {
+        height: 50px;
+        width:  50px;
+    }
+
+    .user .user-list .status-dot {
+        width: 10px;
+        height: 10px;
+        border-radius: 50%;
+        transform: translate(-17px, 23px);
+        background-color: #468669 !important;
+    }
+
+    /* Used in php */
+    .user .user-list .status-dot.offline {
+        color: #ccc;
+    }
+
+    .chat-area header {
+        display: flex;
+        align-items: center;
+    }
+    .chat-area header a .back-arrow {
+        width: 20px;
+        height: 2px;
+        background: #333;
+    }
+
+    .chat-area header img {
+        height: 45px;
+        width: 45px;
+        margin: 0 15px;
+    }
+
+    .chat-area header .details span, p {
+        font-size: 14px;
+        font-weight: 500;
+    }
+    
+    .chat-box::-webkit-scrollbar{
+        width: 0;
+    }
+    .chat-box {
+        height: 500px;
+        background: #f7f7f7;
+        padding: 10px 30px 20px 30px;
+        box-shadow: inset 0 32px 32px -32px rgb(0 0 0 / 5%),
+                    inset 0 -32px 32px -32px rgb(0 0 0 / 5%);
+        overflow: auto;
+    }
+
+    .chat-box .chat p {
+        padding: 8px 16px;
+        word-wrap: break-word;
+    }
+
+    .chat-box .outgoing {
+        display: flex;
+    }
+
+    .outgoing, .incoming .details {
+        margin-left: auto;
+        margin-bottom: 1rem;
+        max-width: calc(100% - 130px);
+    }
+
+    .outgoing .details p {
+        background: #333;
+        color: #fff;
+        border-radius: 18px 18px 0 18px;
+    }
+
+    .chat-box .incoming {
+        display: flex;
+        align-items: center;
+    }
+    .chat-box .incoming img {
+        width: 32px;
+        height: 32px;
+    }
+
+    .incoming .details {
+        margin-left: 10px;
+    }
+
+    .incoming .details p{
+        color: #333;
+        background: #fff;
+        border-radius: 18px 18px 18px 0;
+    }
+
+    .chat-area .typing-area {
+        padding: 18px 30px;
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .typing-area input {
+        height: 45px;
+        width: calc(100% - 58px);
+        font-size: 17px;
+        border: 1px solid #ccc;
+        padding: 0 13px;
+        border-radius: 5px 0 0 5px;
+        outline: none;
+    }
+
+    .typing-area button {
+        width: 55px;
+        border: none;
+        outline: none;
+        background: #333;
+        color: #fff;
+        font-family: 'ubuntu';
+        font-weight: 600;
+        font-size: 15px;
+        cursor: pointer;
+        border-radius: 0 5px 5px 0;
+    }
+
+
+
+
+}
+
+
+
